@@ -1,0 +1,95 @@
+#leftMenu .btn{
+    padding-left:40px;
+    padding-right:40px;
+    margin-top: 5px;
+}
+#mainFrame{
+    height:6000px;
+    min-height: 400px;
+}
+.col-xs-160{
+    width: 16.666666666666664%;
+    max-width: 166px;
+    float: left;
+}
+#mainFrame{
+    font-size: 14px;
+}
+#mainFrame input{
+
+    float: none;
+    font-size: 14px;
+}
+.singleChoice{
+    display: inline-block;
+    width: 95%;
+}
+.multiChoice{
+    display: inline-block;
+    width: 95%;
+}
+.gradeChoice{
+    display: inline-flex;
+    width: 100%;
+}
+.numberOfStar{
+    line-height: 18px;
+}
+.questionTitle{
+}
+
+
+.xuxiankuang{
+    min-width:720px;
+    min-height:50px;
+    border: 2px dashed red;
+}
+.qTitleBar{
+    display: inline-flex;
+}
+.sortChoice > .list-group-item{
+    padding: 3px 15px;
+}
+.editable{
+    display: inline-flex;
+    width: 100%;
+    word-break: break-all;
+}
+.cText{
+    width: 50%;
+}
+/*选项中问答题输入框 纯装饰无作用*/
+.qaInput{
+    float: right !important;
+    line-height: 1em;
+}
+
+.qPoints{
+    width: 50%;
+    float: right;
+    text-align: right;
+}
+.addchoicesdiv{
+   font-size: 12px;
+}
+.addchoicesdiv button{
+    margin: 5px 0px;
+}
+
+.addchoicesdiv textarea{
+     resize:none;line-height:normal;
+}
+.choiceTools span{
+    line-height: 20px;
+}
+.choiceTools button{
+    padding:6px 10px;
+}
+.choiceTools > .btn + .btn {
+    margin-left: -4px;
+}
+
+.qGradeSetDiv{
+    line-height: 10px;
+}
+

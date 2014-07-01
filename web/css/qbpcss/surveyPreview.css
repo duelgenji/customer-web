@@ -1,0 +1,57 @@
+
+.qTitleBar{
+    display: inline-block;
+}
+.qChoicesDiv{
+    padding: 5px;
+    font: 12px "microsoft yahei";
+}
+.qChoicesDiv input[type=radio] ,.qChoicesDiv input[type=checkbox]{
+    vertical-align:-2px;
+}
+.qChoicesDiv input[type=text]{
+    margin-top: 5px;;
+}
+.qChoicesDiv .choiceNo{
+    padding-left: 5px;
+}
+.qChoicesDiv .choiceTitle{
+    padding-left: 10px;
+}
+
+
+/*问答题*/
+.sortChoice{
+    margin-top: 3px;
+    width: 150px;
+    border: 1px solid #999;
+}
+.qSortDiv{
+    display: flex;
+    position: relative;
+}
+.sortLeft{
+    width: 50%;
+
+}
+.sortRight{
+    width: 50%;
+}
+.sortRight ul {
+    list-style-type: none;
+}
+.sortRight li{
+    margin-top: 3px;
+}
+
+
+/*评分题*/
+.gradeStars{
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+.gradeStars span{
+    font-size: 14px;
+}

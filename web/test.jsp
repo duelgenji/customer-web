@@ -1,0 +1,241 @@
+<%--
+  Created by IntelliJ IDEA.
+  User: duel
+  Date: 13-11-8
+  Time: 下午5:38
+  To change this template use File | Settings | File Templates.
+--%>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<html>
+<head>
+    <title></title>
+
+    <script src="js/jquery-1.9.1.js" type="text/javascript"></script>
+    <script src="js/raphael.js" type="text/javascript"></script>
+    <style type="text/css">
+            /*深蓝 #192636   rgb 25 38 55*/
+            /*天蓝 #3BC0FF   rgb 59 192 255*/
+            /*绿   #99CD3E   rgb 153 205 62*/
+        body{
+            margin: 0;
+            background-color: #192636;
+        }
+        .hdr{
+            font: 16px "微软雅黑";
+            background: -webkit-gradient(linear, left top, left bottom, from(#E3FFAB), to(#99cd3e) );
+            /*background-color: #99cd3e;*/
+            width: 500px;
+            padding: 10px 10px 10px;
+            border-radius: 5px 5px 0px 0px;
+        }
+        .hdr-blue{
+            background: -webkit-gradient(linear, left top, left bottom, from(#5783be), to(#192637) );
+            color: #c2c2c2;
+            /*background-color: #99cd3e;*/
+
+        }
+        .hdr-light{
+            background: -webkit-gradient(linear, left top, left bottom, from(#9ee0ff), to(#3bc0ff) );
+            color: #4e4e4e;
+            /*background-color: #99cd3e;*/
+
+        }
+        .con{
+            width: 520px;
+            font: 16px "微软雅黑";
+            background-color: #ddd;
+        }
+        .row-th{
+            background: #fff;
+            border: 1px solid #ddd;
+            border-bottom-style: dotted;
+            vertical-align: middle;
+            padding: 11px 0 8px 10px;
+            overflow: hidden;
+            position: relative;
+        }
+        .row-td{
+            vertical-align: middle;
+            padding: 11px 0 8px 10px;
+            overflow: hidden;
+            position: relative;
+            background: #fff;
+            border: 1px solid #ddd;
+            border-bottom-style: dotted;
+            border-top: 0;
+        }
+        .row-td:last-of-type{
+            border-bottom-style: solid;
+        }
+
+        .div1
+        {
+            width: 500px;
+            display: inline-block;
+        }
+        .div2
+        {
+            margin-top: 10px;
+        }
+        .hdr-ul
+        {
+            font: 14px "微软雅黑";
+            margin-left: 220px;
+        }
+        .hdr-li
+        {
+
+            color: #707276;
+            cursor: pointer;
+            padding-left:10px;
+            padding-right:10px;
+            display: inline-block;
+        }
+        .hdr-li:hover
+        {
+            color: #009dd9;
+
+        }
+        .active{
+            color: #009dd9;
+        }
+
+        .header{
+            background-color: #fff;
+            height: 100px ;
+            width: 100%;
+            min-width: 990px;
+            position: relative;
+        }
+        .wrapper{
+            margin: 0 auto;
+            color: #fff;
+            width: 990px;
+            overflow: hidden;
+            position: relative;
+        }
+        .wrapper a{
+            float: left;
+            display: block;
+        }
+        .center{
+            min-height: 500px;
+            background-color: #fff;
+        }
+        .footer{
+            background-color: #192636;
+            height: 80px;
+            width: 100%;
+            min-width: 990px;
+            position: relative;
+        }
+        .header-hdr{
+            display: inline-block;
+            margin: 55px 0 0 60px;
+            font-size: 16px;
+        }
+        .entry{
+            color: #707276;
+            font-size: 12px;
+            float: right;
+            height: 80px;
+            width: 180px;
+        }
+        .entry-top{
+            margin-top: 15px;
+            color: #707276;
+            font-family: "微软雅黑";
+        }
+        .entry-bottom{
+            color: #707276;
+            font-family: "微软雅黑";
+            margin-top: 45px;
+        }
+        .down {
+            width:auto;
+            height:auto;
+            background-color: #ff0007;
+            position:relative;
+        }
+
+
+
+    </style>
+    <script type="text/javascript">
+        $(document).ready(function () {
+
+            $(".hdr-li").click(function(){
+                $(this).siblings().removeClass("active");
+                $(this).addClass("active");
+            });
+            $(document).on("click","button",function(){
+                $("#hdr").attr("class","hdr "+$(this).attr("id"));
+            });
+
+        });
+
+    </script>
+</head>
+<body>
+<div class="header">
+    <div class="wrapper" >
+        <a href="#" style="display: inline-block;">
+            <svg width="202px" height="140px" version="1.1"
+                 xmlns="http://www.w3.org/2000/svg">
+
+                <defs>
+                    <filter id="f1" x="0" y="0" width="200%" height="200%">
+                        <feOffset result="offOut" in="SourceGraphic" dx="0" dy="0" />
+                        <feGaussianBlur result="blurOut" in="offOut" stdDeviation="0" />
+                        <feBlend in="SourceGraphic" in2="blurOut" mode="normal" />
+                    </filter>
+                </defs>
+                <image xlink:href="images/logot.png" x="0" y="0" height="120px" width="202px"  onclick="changeurl()"  style="filter:url(#f1)"/>
+
+            </svg>
+        </a>
+        <div  class="hdr-ul header-hdr">
+            <div class="hdr-li active">首页</div>
+            <div class="hdr-li">我的问卷</div>
+            <div class="hdr-li">问卷库</div>
+            <div class="hdr-li">帮助</div>
+        </div>
+        <div class="entry">
+            <div class="entry-top">注册 | 登录</div>
+            <div class="entry-bottom">+制作问卷</div>
+
+        </div>
+
+
+    </div>
+
+</div>
+
+<div class="center">
+
+    <div style="height: 64px;background-color: #192636">
+        <div style="font-size: 34px;font-weight:900;color: #a8aaba;margin-left: 950px;margin-top: 16px;position: absolute;">首页</div>
+
+    </div>
+
+    <div style="height:301px;width: 541px;margin:60px 0 0 145px;background-color: #fff">
+        <img style="height:301px;width: 541px;" src='images/index3.jpg'/>
+    </div>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+
+    <%--<div style="margin-left:150px;position:absolute;width: 200px;height: 400px;background-color: gray"></div>--%>
+    <%--<div style="margin-left:400px;position:absolute;width: 700px;height: 400px;background-color: gray"></div>--%>
+
+    <%--<div style="margin-left:150px;position:absolute;width: 600px;height: 400px;background-color: gray"></div>--%>
+    <%--<div style="margin-left:800px;position:absolute;width: 300px;height: 180px;background-color: gray"></div>--%>
+    <%--<div style="margin-left:800px;margin-top:220px;position:absolute;width: 300px;height: 180px;background-color: gray"></div>--%>
+
+
+</div>
+<div class="footer"></div>
+</body>
+</html>

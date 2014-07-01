@@ -1,0 +1,297 @@
+<%--
+  Created by IntelliJ IDEA.
+  User: duel
+  Date: 13-11-8
+  Time: 下午5:38
+  To change this template use File | Settings | File Templates.
+--%>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<html>
+<head>
+    <title></title>
+
+    <link rel="stylesheet" href="css/jquery-ui.css"/>
+    <script src="js/jquery-1.9.1.js" type="text/javascript"></script>
+    <script src="js/jquery-ui.js" type="text/javascript"></script>
+    <script src="js/raphael.js" type="text/javascript"></script>
+    <style type="text/css">
+            /*深蓝 #192636   rgb 25 38 55*/
+            /*天蓝 #3BC0FF   rgb 59 192 255*/
+            /*绿   #99CD3E   rgb 153 205 62*/
+        body{
+            margin: 0;
+            background-color: #192636;
+        }
+        .hdr{
+            font: 16px "微软雅黑";
+            background:#99cd3e;
+            background: -webkit-gradient(linear, left top, left bottom, from(#E3FFAB), to(#99cd3e) );
+            background:-moz-linear-gradient(-90deg, #E3FFAB, #99cd3e);
+            background: -o-linear-gradient(top,#E3FFAB, #99cd3e);
+            background: -ms-linear-gradient(top,#E3FFAB, #99cd3e);
+
+            /*background-color: #99cd3e;*/
+            width: 200px;
+            padding: 10px 10px 10px;
+            border-radius: 5px 5px 0px 0px;
+        }
+        .hdr-blue{
+            background:#5783be;
+            background: -webkit-gradient(linear, left top, left bottom, from(#5783be), to(#192637) );
+            background:-moz-linear-gradient(-90deg, #5783be, #192637);
+            background: -o-linear-gradient(top,#5783be, #192637);
+            background: -ms-linear-gradient(top,#5783be, #192637);
+            background: linear-gradient(to bottom,#5783be, #192637);
+            /*background-color: #99cd3e;*/
+
+        }
+        .hdr-light{
+            background:#3bc0ff;
+            background: -webkit-gradient(linear, left top, left bottom, from(#9ee0ff), to(#3bc0ff) );
+            color: #4e4e4e;
+            /*background-color: #99cd3e;*/
+
+        }
+        .con{
+            width: 220px;
+            font: 16px "微软雅黑";
+            background-color: #fafafa;
+        }
+        .row-th{
+            text-align: center;
+            background: #fff;
+            border: 1px solid #ddd;
+            border-bottom-style: dotted;
+            vertical-align: middle;
+            padding: 11px 0 8px 1px;
+            overflow: hidden;
+            position: relative;
+        }
+        .row-td{
+            text-align: center;
+            vertical-align: middle;
+            padding: 11px 0 8px 1px;
+            overflow: hidden;
+            position: relative;
+            background: #fff;
+            border: 1px solid #ddd;
+            border-bottom-style: dotted;
+            border-top: 0;
+        }
+        .row-td:last-of-type{
+            border-bottom-style: solid;
+        }
+
+        .div1
+        {
+            margin-left:100px;
+            width: 200px;
+            /*ie7 div不换行*/
+            float: left;
+            /*其他浏览器 div不换行*/
+            display: inline-table;
+        }
+        .div2
+        {
+            margin-top: 10px;
+        }
+        .hdr-ul
+        {
+            font: 14px "微软雅黑";
+            text-align: center;
+
+        }
+        .hdr-li
+        {
+            cursor: pointer;
+            padding-left:10px;
+            padding-right:10px;
+            display: inline-block;
+        }
+        .hdr-li:hover
+        {
+            color: #ffffff;
+            font-weight: 900;
+
+        }
+        .active{
+            color: #ffffff;
+            font-weight: 900;
+        }
+
+        .header{
+            background-color: #192636;
+            height: 100px ;
+            width: 100%;
+            min-width: 990px;
+            border-bottom: 1px solid #9AAD9C;
+            position: relative;
+        }
+        .wrapper{
+            margin: 0 auto;
+            color: #fff;
+            width: 990px;
+            overflow: hidden;
+            position: relative;
+        }
+        .wrapper a{
+            float: left;
+            display: block;
+        }
+        .center{
+            min-height: 500px;
+            background-color: #fff;
+        }
+        .footer{
+            background-color: #192636;
+            height: 80px;
+            width: 100%;
+            min-width: 990px;
+            position: relative;
+        }
+        .header-hdr{
+            display: inline-block;
+            margin: 65px 0 0 120px;
+            font-size: 20px;
+        }
+        .entry{
+            float: right;
+            height: 80px;
+            width: 180px;
+        }
+        .entry-top{
+            font-family: "微软雅黑";}
+        .entry-bottom{
+            font-family: "微软雅黑";
+            margin-top: 55px;
+        }
+        .xuxiankuang{
+            width:600px;
+            min-height:50px;
+            border: 2px dashed red;
+        }
+
+
+    </style>
+    <script type="text/javascript">
+        $(document).ready(function () {
+
+            $(".hdr-li").click(function(){
+                $(this).siblings().removeClass("active");
+                $(this).addClass("active");
+            });
+            $(document).on("click","button",function(){
+                $("#hdr").attr("class","hdr "+$(this).attr("id"));
+            });
+
+            $(".con .row-td").on("click",function(){
+                var questionToAdd=$(this).text()+"点击";
+                $("#mainFrame").append("<div class='ui-draggable'>"+questionToAdd+"</div>");
+
+            });
+
+            $(".con .row-td").draggable({
+
+                connectToSortable: "#mainFrame",
+                helper: "clone",
+                canshu:"123",
+                appendTo: 'body',
+                start: function(event, ui) {
+
+                    ui.helper.empty().removeClass("row-td row-th").addClass("xuxiankuang");
+                    //删除文字编辑框
+//                    $('.zon_edit').remove();
+//
+//                    var id = ui.helper.attr('name');
+//                    ui.helper.html('').css({
+//                        'height': 'auto'
+//                    }).addClass('anbx').append(add_topic1(id));
+                },
+                revert: "invalid"
+            });
+
+
+            $( "#mainFrame" ).sortable({
+                revert: true ,
+                stop: function(event, ui) {
+                    /* If newelement ==1, this is a new element to the list, transform it */
+                    var fieldname = ui.item.text();
+                    var questionToAdd=fieldname+"拖动";
+                    ui.item.removeClass("row-th row-td");
+                    ui.item.html('<div class="ui-draggable">'+questionToAdd+'</div>');
+                }
+            });
+
+
+
+            $( ".ui-draggable" ).draggable({
+                connectToSortable: "#mainFrame",
+                helper: "clone",
+                revert: "invalid"
+            });
+
+        });
+
+    </script>
+</head>
+<body>
+<div class="header">
+    <div class="wrapper" >
+        <a href="#" style="display: inline-block;">
+            <img style="border: 0px" src="images/logo.png"/>
+        </a>
+        <div  class="hdr-ul header-hdr">
+            <div class="hdr-li active">首页</div>
+            <div class="hdr-li">我的问卷</div>
+            <div class="hdr-li">问卷库</div>
+            <div class="hdr-li">帮助</div>
+        </div>
+        <div class="entry">
+            <div class="entry-top">注册 | 登录</div>
+            <div class="entry-bottom">+制作问卷</div>
+
+        </div>
+
+
+    </div>
+
+</div>
+
+<div class="center" style="">   <br/> <br/>
+    <button id="hdr-default">风格1</button>
+    <button id="hdr-blue">风格2</button>
+    <button id="hdr-light">风格3</button>     <br/> <br/>
+
+
+    <br/>
+    <div class="div1">
+        <div id="hdr" class="hdr">
+            <div  class="hdr-ul">
+                <div class="hdr-li active">插入题型</div>
+            </div>
+        </div>
+        <div class="con">
+            <div class="row-td row-th" id="danxuan">单选题</div>
+            <div class="row-td">多选题</div>
+            <div class="row-td">问答题</div>
+            <div class="row-td">评分题</div>
+            <div class="row-td">顺序题</div>
+        </div>
+    </div>
+
+    <div class="div1" style="width: 600px;">
+        <div class="hdr" style="width: 600px">
+            <div  class="hdr-ul" >
+                <div class="hdr-li active">插入题型</div>
+            </div>
+        </div>
+        <div class="con" style="width: 620px;height: 240px;overflow: auto;">
+            <div id="mainFrame" style=" background-color: #fafafa;overflow: hidden;">
+                 <div class="ui-draggable">默认标题</div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="footer"></div>
+</body>
+</html>

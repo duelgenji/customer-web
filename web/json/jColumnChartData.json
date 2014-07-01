@@ -1,0 +1,13 @@
+{ "highChart" : [ { "canHidden" : false,
+    "data" : ["549","432","389","334","296"],
+    "subtitle" : "已经有2000人选择",
+    "title" : "你最常使用的浏览器?",
+    "valueSuffix" : "",
+    "yAxis" : { "title" : { "text" : "y标题"}},
+    "xAxis" : { "categories" : ["微软IE", "谷歌Chrome", "火狐Firefox", "Safari", "Opera"],
+        "title" : { "text" : "x标题"}
+    }
+} ],
+    "message" : "错误消息",
+    "success" : "1"
+}

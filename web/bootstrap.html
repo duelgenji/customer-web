@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Bootstrap 101 Template</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.css" rel="stylesheet">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="js/jquery-1.9.1.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+    <![endif]-->
+
+    <style type="text/css">
+            /*深蓝 #192636   rgb 25 38 55*/
+            /*天蓝 #3BC0FF   rgb 59 192 255*/
+            /*绿   #99CD3E   rgb 153 205 62*/
+        body{
+            margin: 0;
+        }
+        .hdr{
+            font: 16px "微软雅黑";
+            background: -webkit-gradient(linear, left top, left bottom, from(#E3FFAB), to(#99cd3e) );
+            /*background-color: #99cd3e;*/
+            width: 500px;
+            padding: 10px 10px 10px;
+            border-radius: 5px 5px 0px 0px;
+        }
+        .hdr-blue{
+            background: -webkit-gradient(linear, left top, left bottom, from(#5783be), to(#192637) );
+            color: #c2c2c2;
+            /*background-color: #99cd3e;*/
+
+        }
+        .hdr-light{
+            background: -webkit-gradient(linear, left top, left bottom, from(#9ee0ff), to(#3bc0ff) );
+            color: #4e4e4e;
+            /*background-color: #99cd3e;*/
+
+        }
+        .con{
+            width: 520px;
+            font: 16px "微软雅黑";
+            background-color: #ddd;
+        }
+        .row-th{
+            background: #fff;
+            border: 1px solid #ddd;
+            border-bottom-style: dotted;
+            vertical-align: middle;
+            padding: 11px 0 8px 10px;
+            overflow: hidden;
+            position: relative;
+        }
+        .row-td{
+            vertical-align: middle;
+            padding: 11px 0 8px 10px;
+            overflow: hidden;
+            position: relative;
+            background: #fff;
+            border: 1px solid #ddd;
+            border-bottom-style: dotted;
+            border-top: 0;
+        }
+        .row-td:last-of-type{
+            border-bottom-style: solid;
+        }
+
+        .hdr-ul
+        {
+            font: 14px "微软雅黑";
+            margin-left: 220px;
+        }
+        .hdr-li
+        {
+
+            color: #707276;
+            cursor: pointer;
+            padding-left:10px;
+            padding-right:10px;
+            display: inline-block;
+        }
+        .hdr-li:hover
+        {
+            color: #009dd9;
+
+        }
+        .active{
+            color: #009dd9;
+        }
+
+        .header{
+            background-color: #fff;
+            height: 100px ;
+            width: 100%;
+            min-width: 990px;
+            position: relative;
+        }
+        .wrapper{
+            margin: 0 auto;
+            color: #fff;
+            width: 990px;
+            overflow: hidden;
+            position: relative;
+        }
+        .wrapper a{
+            float: left;
+            display: block;
+        }
+
+        .header-hdr{
+            display: inline-block;
+            margin: 55px 0 0 60px;
+            font-size: 16px;
+        }
+        .entry{
+            color: #707276;
+            font-size: 12px;
+            float: right;
+            height: 80px;
+            width: 180px;
+        }
+        .entry-top{
+            margin-top: 15px;
+            color: #707276;
+            font-family: "微软雅黑";
+        }
+        .entry-bottom{
+            color: #707276;
+            font-family: "微软雅黑";
+            margin-top: 45px;
+        }
+
+        .logo{
+            top: 15px;
+            left: 20px;
+            background: #fff;
+            -webkit-box-shadow: 0 2px 4px rgba(0,0,0,0.25);
+            -moz-box-shadow: 0 2px 4px rgba(0,0,0,0.25);
+            box-shadow: 0 0px 2px rgba(0,0,0,0.25);
+        }
+        #footer-col div:nth-child(7){
+            margin-top: -15px;
+        }
+
+    </style>
+    <script type="text/javascript">
+        $(document).ready(function () {
+
+            $(".hdr-li").click(function(){
+                $(this).siblings().removeClass("active");
+                $(this).addClass("active");
+            });
+            $(document).on("click","button",function(){
+                $("#hdr").attr("class","hdr "+$(this).attr("id"));
+            });
+
+            $('#myTab a').click(function (e) {
+                e.preventDefault()
+                $(this).tab('show');
+            });
+            $('#myNav a').click(function (e) {
+                e.preventDefault()
+                $(this).tab('show');
+            });
+
+        });
+
+    </script>
+</head>
+<body>
+<div class="header">
+    <div class="wrapper" >
+        <div class="row show-grid">
+            <div class="col-md-3 logo">
+                <a href="#" style="margin-left: 20px;">
+                    <img src="images/logot.png" width="180px" />
+
+                </a>
+            </div>
+            <div class="col-md-6">
+
+                <div class="hdr-ul header-hdr">
+                    <ul class="nav nav-pills" id="myNav">
+                        <li class="active">
+                            <a href="#">首页</a>
+                        </li>
+                        <li><a href="#">我的问卷</a></li>
+                        <li><a href="#">问卷库</a></li>
+                        <li><a href="#">帮助</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="entry">
+                    <div class="entry-top">注册 | 登录</div>
+                    <div class="entry-bottom">+制作问卷</div>
+
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+
+</div>
+<br/>
+<br/>
+<br/>
+
+<!--<div class="row show-grid">-->
+    <!--<div class="col-md-10 col-md-offset-1">-->
+        <!--<ul class="breadcrumb">-->
+            <!--<li class="active"><a href="#">首页</a> <span class="divider"></span></li>-->
+        <!--</ul>-->
+    <!--</div>-->
+<!--</div>-->
+<div class="center" style="width: 990px;margin: 0 auto;">
+<div class="row show-grid">
+    <div class="col-md-7" style="">
+        <img src="images/index3.png" />
+    </div>
+    <div class="col-md-4 col-md-offset-1 bs-example" style="background-color: #fff;">
+        <h3 style="font-family: 'microsoft yahei'">登录后创建问卷 <span class="label label-primary">先去看看</span></h3>
+        <ul class="nav nav-tabs" id="myTab">
+            <li class="active"><a href="#emailTab" data-toggle="tab">邮箱登录</a></li>
+            <li><a href="#phoneTab" data-toggle="tab">手机登录</a></li>
+        </ul>
+        <br/><br/><br/>
+        <div class="tab-content">
+            <div class="tab-pane active" id="emailTab">
+                <form class="form-horizontal" role="form">
+                    <div class="form-group ">
+                        <label for="inputEmail3" class="col-sm-3 control-label">邮箱：</label>
+                        <div class="col-sm-9">
+                            <input type="email" class="form-control" id="inputEmail3" placeholder="邮箱">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="inputPassword3" class="col-sm-3 control-label">密码：</label>
+                        <div class="col-sm-9">
+                            <input type="password" class="form-control" id="inputPassword3" placeholder="">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-sm-offset-2 col-sm-10">
+                            <div class="checkbox">
+                                <label>
+                                    <input type="checkbox"> 记住我
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-sm-offset-2 col-sm-10">
+                            <button type="submit" class="btn btn-default">登录</button>
+                            <button class="btn btn-primary">立即注册</button>
+                            <button class="btn btn-warning">忘记密码</button>
+                        </div>
+                    </div>
+
+                </form>
+            </div>
+            <div class="tab-pane" id="phoneTab">
+                <form class="form-horizontal" role="form">
+                    <div class="form-group ">
+                        <label for="inputEmail3" class="col-sm-3 control-label">手机：</label>
+                        <div class="col-sm-9">
+                            <input type="email" class="form-control" id="inputPhone2" placeholder="手机">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="inputPassword3" class="col-sm-3 control-label">密码：</label>
+                        <div class="col-sm-9">
+                            <input type="password" class="form-control" id="inputPassword2" placeholder="">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-sm-offset-2 col-sm-10">
+                            <div class="checkbox">
+                                <label>
+                                    <input type="checkbox"> 记住我
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-sm-offset-2 col-sm-10">
+                            <button type="submit" class="btn btn-default">登录</button>
+                            <button class="btn btn-primary">立即注册</button>
+                            <button class="btn btn-warning">忘记密码</button>
+                        </div>
+                    </div>
+
+                </form>
+
+            </div>
+        </div>
+
+    </div>
+</div>
+</div>
+<br/>
+<br/>
+
+
+<footer style="background-color: #f1f1f1">
+    <div class="container" >
+
+        <br/>
+        <div class="row" id="footer-col">
+            <div class="col-md-offset-1 col-md-1 ">关于我们</div>
+            <div class="col-md-1">积分规则</div>
+            <div class="col-md-1">联系我们</div>
+            <div class="col-md-1">隐私说明</div>
+            <div class="col-md-1">人才招聘</div>
+
+            <div class="col-md-2">还有更多好玩，快来下载</div>
+            <div class="col-md-2">
+                <a href="javascript:void(0)"><img src="images/apple.png"></a>
+                <a href="javascript:void(0)"><img src="images/android.png"></a>
+            </div>
+        </div>
+        <br/>
+
+        <div class="row">
+            <div class="col-md-offset-3">
+                © 2012-2013 All rights reserved 上海众创商务咨询有限公司 沪ICP备10202509号-2
+            </div>
+        </div>
+        <br/>
+        <div style="text-align: center;">
+            <a href="http://www.sgs.gov.cn/lz/licenseLink.do?method=licenceView&amp;entyId=201309171611156"><img src="images/icon.gif" border="0"></a>
+
+        </div>
+
+    </div>
+</footer>
+</body>
+</html>

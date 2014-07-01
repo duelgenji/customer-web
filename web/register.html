@@ -1,0 +1,230 @@
+<%--
+  Created by IntelliJ IDEA.
+  User: duel
+  Date: 13-11-8
+  Time: 上午11:54
+  To change this template use File | Settings | File Templates.
+--%>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>会员注册-趣宝盆</title>
+<link href="css/kuangjia.css" rel="stylesheet" type="text/css" />
+<link href="css/button.css" rel="stylesheet" type="text/css" />
+<link href="css/daohang.css" rel="stylesheet" type="text/css" />
+<script src="js/jquery-1.9.1.js" type="text/javascript"></script>
+<script src="js/menu.js" type="text/javascript"></script>
+
+
+<script type="text/javascript">
+
+
+    var regType=1;
+
+    function emailYZ(email){
+        return /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(email)?true:false;
+    }
+    function mobileYz(mobile){
+        return /^((13[0-9])|(15[^4,\D])|(18[0,5-9]))\d{8}$/.test(mobile)  ? true : false ;
+    }
+    function pwdYz(pwd) {
+        return pwd!="" ? true : false;
+    }
+
+
+    var tipsClear=function TipsClear(){
+        $(this).parent().next().empty();
+    }
+    var tipsAppend=function(t){
+        return function(){
+        //传入email pwd pwd2
+            var type=t;
+
+
+            if(type=="email"){
+                if(regType==1 &&!emailYZ($("#text-email").val())){
+                    $("#emailtips").empty().append("格式不正确，示例：qubaopen@outlook.com");
+                }
+
+            }
+            else if(type=="mobile"){
+                if(regType==2 &&!mobileYz($("#text-mobile").val())){
+                    $("#mobiletips").empty().append("请输入有效的手机号码");
+                }
+            }
+            else if(type=="pwd"){
+                if(!pwdYz($("#text-pwd").val())) {
+                    $("#pwdtips").empty().append("密码不能为空！");
+                }
+            }else if(type=="pwd2"){
+                var pwd=$("#text-pwd").val();
+                var pwd2=$("#text-pwd-2").val();
+                if (!pwdYz(pwd2)) {
+                    ////console.log("邮箱不合法,正确格式示例：qubaopen@outlook.com");
+                    $("#pwdtips2").empty().append("密码不能为空！");
+                }
+                if ( pwd2!=pwd) {
+                    ////console.log("邮箱不合法,正确格式示例：qubaopen@outlook.com");
+                    $("#pwdtips2").empty().append("两次密码输入不一致！");
+                }
+            }
+        };
+    }
+
+
+    $(document).ready(function () {
+
+
+        $("#text-email").focus(tipsClear);
+        $("#text-email").blur(tipsAppend("email"));
+        $("#text-mobile").focus(tipsClear);
+        $("#text-mobile").blur(tipsAppend("mobile"));
+        $("#text-pwd").focus(tipsClear);
+        $("#text-pwd").blur(tipsAppend("pwd"));
+        $("#text-pwd-2").focus(tipsClear);
+        $("#text-pwd-2").blur(tipsAppend("pwd2"));
+
+        $("#zhuce").click(function () {
+            var email=$("#text-email").val();
+            var mobile=$("#text-mobile").val();
+            var pwd=$("#text-pwd").val();
+            var pwd2=$("#text-pwd-2").val();
+            if(regType==1){
+                if(emailYZ(email) && pwdYz(pwd) && pwdYz(pwd2) && pwd==pwd2){
+                    //console.log("调用邮箱注册接口"+email+pwd);
+                    var jsonSent = '{"username":"' + email
+                            + '",' + '"pwd":"' + pwd
+                            + '"}';
+
+
+                    $.ajax({
+                        url: "http://localhost/cs"+"/user/regist.htm",
+                        type: "POST",
+                        dataType: "json",
+                        data: {"json": jsonSent},
+                        success: function (data, textStatus, jqXHR) {
+
+                            var result = data.success;
+                            if (result == 1) {
+                                setCookie("cookie1","");
+                                self.location = "index.html";
+                            }
+                            if (result == 0) {
+                                msg = data.message;
+
+                            }
+                            ////console.log(result);
+
+                        }
+                    });
+                }
+            }
+            if(regType==2){
+                if(mobileYz(mobile) && pwdYz(pwd) && pwdYz(pwd2) && pwd==pwd2){
+                    alert("调用手机注册接口"+mobile+pwd);
+                }
+            }
+        });
+
+        $("#regByMobile").click(function(){
+            if(regType==1){
+                $("#emailTr").toggle();
+                $("#mobileTr").toggle();
+                regType=2;
+            };
+
+
+        });
+        $("#regByEmail").click(function(){
+            if(regType==2){
+                $("#emailTr").toggle();
+                $("#mobileTr").toggle();
+                regType=1;
+            };
+        });
+
+
+});
+
+
+</script>
+
+
+</head>
+<body>
+<div class="dingbu">
+    <div class="shangzhongbu">
+        <div class="logo"><a href="index.html"><img src="images/logo.png" width="202" height="140"/></a>
+        </div>
+        <div class="daohang">
+
+            <div class="zhuangtailan"><div id="zhuangtailan"><a href="javascript:void(0)" onclick="self.location='register.html';">注册</a>&nbsp|&nbsp<a href="javascript:void(0)" onclick="logon('1')">登录</a></div></div>
+            <ul class="nav">
+                <li><a href="index.html">首 页</a></li>
+                <li><a href="quceshi.html">趣测试</a></li>
+                <li><a href="qudiaoyan.html">趣调研</a></li>
+                <li><a href="quduijiang.html">趣兑奖</a></li>
+                <li><a href="quzhijia.html">趣之家</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="zhongbu">
+    <div class="register">
+        <div class="wenbenbiaoti">会员注册</div>
+         <div style="text-align: center;">
+             <button id='regByEmail'>邮箱注册</button>
+             <button id='regByMobile'>手机注册</button>
+         </div>
+        <table width="485" height="207" border="0" cellpadding="0" cellspacing="0">
+
+        <tr id="emailTr" >
+            <td id="firstTd" width="77">邮　　箱：</td>
+            <td id="secondTd" colspan="2">
+                <input name="textfield" placeholder="输入邮箱地址" type="text" class="wenbenkuang" id="text-email" size="30" />
+            </td>
+            <td style="color: red;font-size: 12px" id="emailtips" width="177"></td>
+        </tr>
+            <tr id="mobileTr" style="display: none;">
+                <td  width="77">手机号码：</td>
+                <td  colspan="2">
+                    <input name="textfield" placeholder="输入手机号码" type="text" class="wenbenkuang" id="text-mobile" size="30" />
+                </td>
+                <td style="color: red;font-size: 12px" id="mobiletips" width="177"></td>
+            </tr>
+
+
+
+
+        <tr>
+            <td>设置密码：</td>
+            <td colspan="2"><input name="textfield3" type="password" class="wenbenkuang" id="text-pwd" size="30" /></td>
+            <td style="color: red;font-size: 12px" id="pwdtips" width="177"></td>
+        </tr>
+        <tr>
+            <td>确认密码：</td>
+            <td colspan="2"><input name="textfield4" type="password" class="wenbenkuang" id="text-pwd-2" size="30" /></td>
+            <td style="color: red;font-size: 12px" id="pwdtips2" width="177"></td>
+        </tr>
+
+    </table>
+        <div style="margin: 30px 0 0 400px" class="button button-blue pointer" id="zhuce">立即注册</div></div>
+</div>
+<div class="dibu">
+    <div class="dizhongbu" >
+        <div class="dibuwenzi" >
+            <a href="aboutus.html">关于我们</a> ｜ <a href="rule.html">积分规则</a> ｜ <a href="lianxi.html">联系我们</a> ｜ <a href="yinsi.html">隐私说明</a> ｜ <a href="rencai.html">人才招聘</a>　　有更多好玩，快来下载！</div>
+        <img class="dibuicon" src="images/apple.png" width="35" height="35" />
+        <img class="dibuicon" src="images/android.png" width="35" height="35" />
+        <div class="dibuwenzi">
+            　　　　  　　　　请关注我</div>
+
+        <img style="cursor: pointer;" onclick="window.open('http://weibo.com/u/3578471374');" class="dibuicon" src="images/sina.png" width="35" height="35" />
+        <img  style="cursor: pointer;" onclick="window.open('http://t.qq.com/qubaopen001')" class="dibuicon" src="images/tencent.png" width="35" height="35" />
+        <div class="dibuwenzi">　　　　　　　　　　　　　　　　2012-2013 All rights reserved 上海众创商务咨询有限公司 沪ICP备10202509号-2</div>
+        <div class="gongshang"><SCRIPT LANGUAGE="JavaScript" >
+            document.writeln("<a href='http://www.sgs.gov.cn/lz/licenseLink.do?method=licenceView&entyId=201309171611156'><img src='images/icon.gif' border=0></a>")</SCRIPT></div></div>
+</div>
+</body>
+</html>

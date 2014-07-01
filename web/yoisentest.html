@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>yoisentest</title>
+
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js">
+    </script>
+    <script>
+
+        $(document).ready(function () {
+            $("button").attr("disabled", "true");
+            var jsonSent = {"username": "791884017@qq.com", "pwd": "654321aa"};
+            $.ajax({
+                url: "user/logon.htm",
+                type: "POST",
+                dataType: "json",
+                async: false,
+                data: {"json": JSON.stringify(jsonSent) },
+                success: function (data) {
+                    //console.log(data);
+                    var result = data.success;
+                    if (result == 1) {
+                        //console.log("logon success");
+                        $("button").removeAttr("disabled");
+
+                    } else if (result == 0) {
+                        var msg = data.message;
+                        alertify.alert(msg);
+                    }
+                }});
+        });
+
+    </script>
+
+
+    <script type="text/javascript">
+        //获取所有问卷模板分类
+        function getAllWjmb() {
+            $.ajax({
+                url: "wjmb/allwjmb.htm",
+                type: "POST",
+                dataType: "json",
+                async: false,
+                success: function (data) {
+                    //console.log(data);
+                    var result = data.success;
+                    if (result == 1) {
+
+                    } else if (result == 0) {
+                        var msg = data.message;
+                        alertify.alert(msg);
+                    }
+                }});
+        }
+
+
+        function getWjMb() {
+            var jsonSent = {"childModelId": "value"};
+            jsonSent.childModelId = 1;
+
+            $.ajax({
+                url: "wjmb/getwjmb.htm",
+                type: "POST",
+                dataType: "json",
+                async: false,
+                data: {"json": JSON.stringify(jsonSent) },
+                success: function (data) {
+                    //console.log(data);
+                    var result = data.success;
+                    if (result == 1) {
+
+                    } else if (result == 0) {
+                        var msg = data.message;
+                        alertify.alert(msg);
+                    }
+                }});
+        }
+
+
+        function getWjList() {
+
+
+            var jsonSent = {"pageNo": "value", "pageSize": "value", "orderBy": "value", "orderDir": "value"};
+            jsonSent.pageNo = 1;
+            jsonSent.pageSize = 10;
+            jsonSent.orderBy = "cjsj";
+            jsonSent.orderDir = "asc";
+
+            $.ajax({
+                url: "dywj/list.htm",
+                type: "POST",
+                dataType: "json",
+                async: false,
+                data: {"json": JSON.stringify(jsonSent) },
+                success: function (data) {
+                    //console.log(data);
+                    var result = data.success;
+                    if (result == 1) {
+
+                    } else if (result == 0) {
+                        var msg = data.message;
+                        alertify.alert(msg);
+                    }
+                }});
+
+
+        }
+
+
+        function deleteWj(){
+            var jsonSent = {"wjIds":[]};
+            jsonSent.wjIds[0] = 3;
+
+
+            $.ajax({
+                url: "dywj/delete.htm",
+                type: "POST",
+                dataType: "json",
+                async: false,
+                data: {"json": JSON.stringify(jsonSent) },
+                success: function (data) {
+                    //console.log(data);
+                    var result = data.success;
+                    if (result == 1) {
+
+                    } else if (result == 0) {
+                        var msg = data.message;
+                        alertify.alert(msg);
+                    }
+                }});
+
+
+        }
+
+
+        function insertWj(){
+
+        }
+
+        function getIndexWjList(){
+            $.ajax({
+                url: "publicwj/getindexlist.htm",
+                type: "POST",
+                dataType: "json",
+                async: false,
+                //data: {"json": JSON.stringify(jsonSent) },
+                success: function (data) {
+                    //console.log(JSON.stringify(data));
+                    var result = data.success;
+                    if (result == 1) {
+
+                    } else if (result == 0) {
+                        var msg = data.message;
+                        alertify.alert(msg);
+                    }
+                }});
+
+        }
+
+
+        function getWjmbList(){
+            var jsonSent = {"pageNo":"","pageSize":"","orderDir":""};
+            jsonSent.pageNo = 1;
+            jsonSent.pageSize = 7
+            jsonSent.orderDir = "DESC";
+
+            //console.log(JSON.stringify(jsonSent));
+
+            $.ajax({
+                url: "publicwj/getwjmblist.htm",
+                type: "POST",
+                dataType: "json",
+                async: false,
+                data: {"json": JSON.stringify(jsonSent) },
+                success: function (data) {
+                    //console.log(JSON.stringify(data));
+                    var result = data.success;
+                    if (result == 1) {
+
+                    } else if (result == 0) {
+                        var msg = data.message;
+                        alertify.alert(msg);
+                    }
+                }});
+        }
+
+
+        function getPublicWjList(){
+            var jsonSent = {"pageNo":"","pageSize":"","orderDir":"","type":""};
+            jsonSent.pageNo = 1;
+            jsonSent.pageSize = 10
+            jsonSent.orderDir = "DESC";
+            jsonSent.type = 1;
+            //console.log(JSON.stringify(jsonSent));
+
+            $.ajax({
+                url: "publicwj/getwjlist.htm",
+                type: "POST",
+                dataType: "json",
+                async: false,
+                data: {"json": JSON.stringify(jsonSent) },
+                success: function (data) {
+                    //console.log(JSON.stringify(data));
+                    var result = data.success;
+                    if (result == 1) {
+
+                    } else if (result == 0) {
+                        var msg = data.message;
+                        alertify.alert(msg);
+                    }
+                }});
+        }
+
+
+    </script>
+</head>
+<body>
+
+<div>
+    <button onclick="getAllWjmb()">获取问卷模板</button>
+</div>
+
+<div>
+    <button onclick="getWjMb()">获取具体问卷模板</button>
+</div>
+
+<div>
+    <button onclick="getWjList()">获取问卷列表</button>
+</div>
+
+<div>
+    <button onclick="deleteWj()">删除问卷</button>
+</div>
+
+<div>
+    <button onclick="insertWj()">基本问卷录入，不包含问题逻辑</button>
+</div>
+
+<div>
+    <button onclick="getIndexWjList()">获取公开问卷列表，5模板问卷，5公开问卷</button>
+</div>
+
+<div>
+    <button onclick="getWjmbList()">获取问卷模板列表</button>
+</div>
+
+<div>
+    <button onclick="getPublicWjList()">获取公开问卷列表</button>
+</div>
+
+<div>
+    <button onclick="modifyWj()">修改问卷</button>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,204 @@
+<%--
+  Created by IntelliJ IDEA.
+  User: duel
+  Date: 13-12-14
+  Time: 上午10:28
+  To change this template use File | Settings | File Templates.
+--%>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<html>
+<head>
+    <title>趣调研问卷</title>
+    <%@include file="package.jsp" %>
+    <link href="css/qbpcss/surveyPreview.css" rel="stylesheet">
+    <script src="js/qbpjs/doSurvey.js"></script>
+    <script src="js/qbpjs/utils.js"></script>
+
+
+</head>
+<body>
+<div id="loadingDiv" style="position:fixed;top:45%;left:50%;z-index:999;"></div>
+<div class="row" style="padding-top: 30px;">
+    <div class="col-xs-offset-2 col-xs-8">
+        <div id="survey" class="panel panel-default">
+            <!-- Default panel contents -->
+
+            <div id="title" class="panel-heading">人力资源 - 离职调查模板</div>
+            <div class="panel-body">
+                <p>
+                    您好！本调查没有“对”、“错”之分，请您尽可能填写真实情况和想法予以回答。
+                </p>
+            </div>
+
+            <table id="question" class="table">
+                <tbody>
+                <tr>
+                    <td>
+                        <div class="qTitleBar">
+                            <span>Q</span><span class="qIndex">1</span><span>. </span>
+                            <span class="qTitle">您离开公司的主要原因是什么？</span>
+                        </div>
+                        <div class="qChoicesDiv">
+                            <div class="qChoice">
+                                <input type="radio" name="choice1" value=""/>
+                                <span class="choiceNo">A</span><span class="choiceTitle">钱太少</span>
+                            </div>
+                            <div class="qChoice">
+                                <input type="radio" name="choice1" value="">
+                                <span class="choiceNo">B</span><span class="choiceTitle">人太2</span>
+                            </div>
+                            <div class="qChoice">
+                                <input type="radio" name="choice1" value="">
+                                <span class="choiceNo">C</span><span class="choiceTitle">路太远</span>
+                            </div>
+                        </div>
+
+
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="qTitleBar">
+                            <span>Q</span><span class="qIndex">2</span><span>. </span>
+                            <span class="qTitle">你工作的内容主要有些什么？</span>
+                        </div>
+
+                        <div class="qChoicesDiv">
+                            <div class="qChoice">
+                                <input type="checkbox" name="choice2" value=""/>
+                                <span class="choiceNo">A</span><span class="choiceTitle">看微信</span>
+                            </div>
+                            <div class="qChoice">
+                                <input type="checkbox" name="choice2" value="">
+                                <span class="choiceNo">B</span><span class="choiceTitle">刷微博</span>
+                            </div>
+                            <div class="qChoice">
+                                <input type="checkbox" name="choice2" value="">
+                                <span class="choiceNo">C</span><span class="choiceTitle">打酱油</span>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="qTitleBar">
+                            <span>Q</span><span class="qIndex">3</span><span>. </span>
+                            <span class="qTitle">请问你有什么话好说？</span>
+                        </div>
+
+                        <div class="qChoicesDiv">
+                            <div class="qChoice">
+                                <input type="text"/>
+                            </div>
+                            <div class="qChoice">
+                                <input type="text"/>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <div class="qTitleBar">
+                            <span>Q</span><span class="qIndex">4</span><span>. </span>
+                            <span class="qTitle">你给喜欢的职业排个序？</span>
+                        </div>
+
+                        <div class="qChoicesDiv qSortDiv">
+                            <div class="sortLeft">
+                                <div class="qChoice sortChoice">
+                                    工人
+                                </div>
+                                <div class="qChoice sortChoice">
+                                    农民
+                                </div>
+                                <div class="qChoice sortChoice">
+                                    白领
+                                </div>
+                                <div class="qChoice sortChoice">
+                                    自由
+                                </div>
+                            </div>
+                            <div class="sortRight">
+                                <ul>
+                                    <li>
+                                        1
+                                    </li>
+                                    <li>
+                                        2
+                                    </li>
+                                    <li>
+                                        3
+                                    </li>
+                                    <li>
+                                        4
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <div class="qTitleBar">
+                            <span>Q</span><span class="qIndex">5</span><span>. </span>
+                            <span class="qTitle">给下列手机系统打个分？</span>
+                        </div>
+
+                        <div class="qChoicesDiv qSortDiv">
+                            <div class="sortLeft">
+                                <div class="qChoice gradeChoice">
+                                    IOS
+                                </div>
+                                <div class="qChoice gradeChoice">
+                                    Android
+                                </div>
+                            </div>
+                            <div class="sortRight">
+                                <ul>
+                                    <li class="gradeStars">
+                                        <span class="glyphicon glyphicon-star-empty"></span>
+                                        <span class="glyphicon glyphicon-star-empty"></span>
+                                        <span class="glyphicon glyphicon-star-empty"></span>
+                                        <span class="glyphicon glyphicon-star-empty"></span>
+                                        <span class="glyphicon glyphicon-star-empty"></span>
+                                        <span class="glyphicon glyphicon-star-empty"></span>
+                                        <span class="glyphicon glyphicon-star-empty"></span>
+                                        <span class="glyphicon glyphicon-star-empty"></span>
+                                        <span class="glyphicon glyphicon-star-empty"></span>
+                                        <span class="glyphicon glyphicon-star-empty"></span>
+                                    </li>
+                                    <li class="gradeStars">
+                                        <span class="glyphicon glyphicon-star-empty"></span>
+                                        <span class="glyphicon glyphicon-star-empty"></span>
+                                        <span class="glyphicon glyphicon-star-empty"></span>
+                                        <span class="glyphicon glyphicon-star-empty"></span>
+                                        <span class="glyphicon glyphicon-star-empty"></span>
+                                        <span class="glyphicon glyphicon-star-empty"></span>
+                                        <span class="glyphicon glyphicon-star-empty"></span>
+                                        <span class="glyphicon glyphicon-star-empty"></span>
+                                        <span class="glyphicon glyphicon-star-empty"></span>
+                                        <span class="glyphicon glyphicon-star-empty"></span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-offset-5 col-xs-2">
+            <div id="submitSurvey" class="btn btn-primary btn-lg">提交问卷</div>
+        </div>
+    </div>
+</div>
+
+
+</body>
+</html>

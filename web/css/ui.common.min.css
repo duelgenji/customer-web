@@ -1,0 +1,14 @@
+body, ul{ margin:0; padding:0 }
+ul, li{ list-style:none }
+.xmFocus{height:430px;position:relative;overflow:hidden;margin:0 auto}.xmFocus a{position:absolute;display:block;z-index:1;left:0;top:0;width:auto;height:100%;float:left;margin-right:-100%;text-align:center}
+.xmFocus ul{
+	position: absolute;
+	right: 18px;
+	bottom: 38px;
+	overflow: hidden;
+	z-index: 998;
+	_zoom: 1
+}.xmFocus li{width:12px;height:12px;margin-right:5px;text-align:center;background:#fff;border:1px solid #666;cursor:pointer;opacity:.3;filter:alpha(opacity=30);float:right;_display:inline}
+.xmFocus li a{display:block;width:10px;height:10px}.xmFocus .on{background:#666;border-radius:1px solid #fff;cursor:normal}.home_main{width:600px;margin:0 auto}
+.cfl{ *zoom:1}
+.cfl:after{ content:"\0020"; display:block; height:0; clear:both; overflow:hidden; visibility:hidden }
