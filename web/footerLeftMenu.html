@@ -1,0 +1,19 @@
+<script type="text/javascript">
+    $(document).ready(function () {
+        $(".nav-list li:eq("+'<%=request.getParameter("type")==null?0:request.getParameter("type")%>'+")").toggleClass("active");
+
+    });
+
+</script>
+
+<div id="footerLeftMenu" class="well sidebar-nav">
+    <div class="nav-list"><a href="about.html">关于我们</a></div>
+    <br/>
+    <div class="nav-list"><a href="role.html">积分规则</a></div>
+    <br/>
+    <div class="nav-list"><a href="contact.html">联系我们</a></div>
+    <br/>
+    <div class="nav-list"><a href="privacy.html">隐私说明</a></div>
+    <br/>
+    <div class="nav-list"><a href="job.html">人才招聘</a></div>
+</div>
