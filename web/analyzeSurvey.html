@@ -1,19 +1,13 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: duel
-  Date: 13-12-3
-  Time: 下午3:07
-  To change this template use File | Settings | File Templates.
---%>
-
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
     <title>趣宝盆</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <script src="js/jquery-1.9.1.js"></script>
+    <script src="js/import/import.js"></script>
+
 
     <link rel="stylesheet" href="css/jquery-ui.css"/>
 
-    <%@include file="package.jsp"%>
 
     <script src="js/highcharts.src.js"></script>
     <script src="js/highcharts-more.src.js"></script>
@@ -43,19 +37,19 @@
 
 </head>
 <body>
-<%@include file="toubu.jsp"%>
+<span id="includeHead" > </span>
 
 
 
 <div class="center" style="font-family:'microsoft yahei';display:block;min-height:450px;width: 80%;margin: 10px auto;">
 
     <ol class="breadcrumb">
-        <li><a href="shouye.jsp">首页</a></li>
-        <li><a href="mySurveyList.jsp">我的问卷</a></li>
+        <li><a href="shouye.html">首页</a></li>
+        <li><a href="mySurveyList.html">我的问卷</a></li>
         <li  class="active">问卷分析</li>
     </ol>
     <ul class="nav nav-tabs">
-        <li class="active"><a href="analyzeSurvey.jsp" class="movies"><div id="id13"></div>问卷分析</a></li>
+        <li class="active"><a href="analyzeSurvey.html" class="movies"><div id="id13"></div>问卷分析</a></li>
     </ul>
     <div class="jumbotron createcontent">
         <div id="createTab" style="min-height: 200px;">
@@ -136,8 +130,8 @@
 
     </div>
 
-</div>
-<%@include file="dibu.jsp"%>
+    </div>
+    <span id="includeFooter" > </span>
 
 </body>
 </html>

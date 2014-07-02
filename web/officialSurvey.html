@@ -1,19 +1,9 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: duel
-  Date: 13-12-12
-  Time: 下午12:24
-  To change this template use File | Settings | File Templates.
---%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
     <title>趣宝盆</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <script src="js/jquery-1.9.1.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <link href="css/bootstrap.css" rel="stylesheet">
-    <link href="css/qbpcss.css" rel="stylesheet">
-    <script src="js/qbpjs/utils.js"></script>
+    <script src="js/import/import.js"></script>
     <script src="js/qbpjs/surveyList.js"></script>
     <script type="text/javascript">
         $(document).ready(function () {
@@ -42,15 +32,15 @@
 
 </head>
 <body>
-<%@include file="toubu.jsp"%>
+<span id="includeHead" > </span>
 
 
 <div class="center" style="width: 95%;margin: 10px auto;">
     <div class="row">
         <div class="col-xs-offset-1 col-xs-10">
             <ol class="breadcrumb">
-                <li><a href="shouye.jsp">首页</a></li>
-                <li><a href="wenjuanku.jsp">问卷库</a></li>
+                <li><a href="shouye.html">首页</a></li>
+                <li><a href="wenjuanku.html">问卷库</a></li>
                 <li class="active">模板问卷</li>
             </ol>
         </div>
@@ -77,13 +67,13 @@
             <div id="leftMenu" class="well sidebar-nav">
                 <div class="nav-list">模板问卷</div>
                 <ul class="nav nav-list">
-                    <li><a href="officialSurvey.jsp">所有类型</a></li>
-                    <li><a href="officialSurvey.jsp?type=1">电子商务</a></li>
-                    <li><a href="officialSurvey.jsp?type=2">市场调查</a></li>
-                    <li><a href="officialSurvey.jsp?type=3">客户调查</a></li>
-                    <li><a href="officialSurvey.jsp?type=4">人力资源</a></li>
-                    <li><a href="officialSurvey.jsp?type=5">校园调查</a></li>
-                    <li><a href="officialSurvey.jsp?type=6">其他</a></li>
+                    <li><a href="officialSurvey.html">所有类型</a></li>
+                    <li><a href="officialSurvey.html?type=1">电子商务</a></li>
+                    <li><a href="officialSurvey.html?type=2">市场调查</a></li>
+                    <li><a href="officialSurvey.html?type=3">客户调查</a></li>
+                    <li><a href="officialSurvey.html?type=4">人力资源</a></li>
+                    <li><a href="officialSurvey.html?type=5">校园调查</a></li>
+                    <li><a href="officialSurvey.html?type=6">其他</a></li>
                 </ul>
             </div>
         </div>
@@ -133,7 +123,7 @@
         </div>
     </div>
 </div>
-<%@include file="dibu.jsp"%>
+<span id="includeFooter" > </span>
 
 </body>
 </html>

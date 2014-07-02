@@ -588,7 +588,7 @@ function saveSurvey(){
                 if (result == 1) {
                     alertify.success("新建问卷成功");
                     setCurrentQid(oJson.iDywjId);
-                    $().redirect('editsurvey.jsp',{'qid':oJson.iDywjId},"get");
+                    $().redirect('editsurvey.html',{'qid':oJson.iDywjId},"get");
 
                 } else if (result == 0) {
                     var msg = oJson.message;
@@ -927,5 +927,5 @@ function getCurrentQid(){
 //跳转至编辑逻辑页面
 function editLogic(){
     var qid=getCurrentQid();
-    $().redirect('editLogic.jsp',{'qid': qid},"get");
+    $().redirect('editLogic.html',{'qid': qid},"get");
 }

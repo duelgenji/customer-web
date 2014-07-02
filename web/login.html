@@ -1,15 +1,9 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: duel
-  Date: 13-12-6
-  Time: 上午10:54
-  To change this template use File | Settings | File Templates.
---%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
     <title>趣宝盆用户登录</title>
-    <%@include file="package.jsp"%>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <script src="js/jquery-1.9.1.js"></script>
+    <script src="js/import/import.js"></script>
 </head>
 <body>
 
@@ -21,12 +15,12 @@
         </div>
         <div class="row show-grid">
             <div class="col-xs-2 col-xs-offset-1 logo">
-                <a href="shouye.jsp">
+                <a href="shouye.html">
                     <img src="images/logot.png" width="180px" />
                 </a>
             </div>
             <div class="col-xs-offset-6 col-xs-2">
-                <div class="backToHome" onclick="self.location='shouye.jsp'">
+                <div class="backToHome" onclick="self.location='shouye.html'">
                     <span class="glyphicon glyphicon-circle-arrow-left"></span> 返回首页
                 </div>
             </div>
@@ -71,7 +65,7 @@
                                     </label>
                                 </div>
                                 <button onclick="loginByMobile()" id="loginByMobileBtn" type="button" class="btn btn-primary">登陆</button>
-                                <a href="register.jsp">还没有账号？点此注册</a>
+                                <a href="register.html">还没有账号？点此注册</a>
                             </form>
                         </div>
 
@@ -92,7 +86,7 @@
                                     </label>
                                 </div>
                                 <button onclick="loginByEmail()" type="button" class="btn btn-primary">登陆</button>
-                                <a href="register.jsp">还没有账号？点此注册</a>
+                                <a href="register.html">还没有账号？点此注册</a>
                             </form>
                         </div>
 
@@ -110,30 +104,29 @@
                 <div></div>
             </div>
         </div>
-        <%--<div class="col-xs-4 thumbnail">--%>
-            <%--<div class="row">--%>
-                <%--<div class="col-xs-offset-1 col-xs-11">--%>
-                    <%--<br/>--%>
-                    <%--<div class="divTitle">使用合作者账号登陆趣宝盆</div>--%>
-                    <%--<ul class="ulCorp">--%>
-                        <%--<li><a href="https://api.weibo.com/oauth2/authorize?response_type=code&amp;client_id=531021288&amp;redirect_uri=http%3A%2F%2Fwww.diaoyanbao.com%2Fsignup%2Fsina"><img src="images/l-sina.png" alt="新浪微博登录" width="120" height="24"></a></li>--%>
-                        <%--<li><a href="http://openapi.qzone.qq.com/oauth/show?which=ConfirmPage&amp;response_type=code&amp;client_id=100277792&amp;redirect_uri=http%3A%2F%2Fwww.diaoyanbao.com%2Fsignup%2Fqq&amp;scope=get_user_info,get_info,add_t,add_pic_t,add_share"><img src="images/l-qq.png" alt="QQ账号登录" width="120" height="24"></a></li>--%>
-                        <%--<li><a href="https://mapi.alipay.com/gateway.do?_input_charset=utf-8&amp;target_service=user.auth.quick.login&amp;sign_type=MD5&amp;service=alipay.auth.authorize&amp;partner=2088701559561780&amp;return_url=http%3A%2F%2Fwww.diaoyanbao.com%2Fsignup%2Falipay&amp;sign=439baa24658e83a1e274b8d2e5a10083"><img src="images/l-alipay.png" alt="支付宝快捷登录" width="120" height="27"></a></li>--%>
-                        <%--<li><a href="http://app.hichina.com/toapp/100050"><img src="images/l-wanw.png" alt="万网登录" width="120" height="27"></a></li>--%>
-                        <%--<li><a href="null?response_type=code&amp;client_id=null&amp;redirect_uri=null"><img src="images/l-jd.gif" alt="京东登录" width="120" height="24"></a></li>--%>
-                        <%--<li><a href="login/taobao"><img width="120" height="24" alt="淘宝卖家登录" src="images/l-taobao.gif"></a></li>--%>
-                    <%--</ul>--%>
+        <!--<div class="col-xs-4 thumbnail">-->
+            <!--<div class="row">-->
+                <!--<div class="col-xs-offset-1 col-xs-11">-->
+                    <!--<br/>-->
+                    <!--<div class="divTitle">使用合作者账号登陆趣宝盆</div>-->
+                    <!--<ul class="ulCorp">-->
+                        <!--<li><a href="https://api.weibo.com/oauth2/authorize?response_type=code&amp;client_id=531021288&amp;redirect_uri=http%3A%2F%2Fwww.diaoyanbao.com%2Fsignup%2Fsina"><img src="images/l-sina.png" alt="新浪微博登录" width="120" height="24"></a></li>-->
+                        <!--<li><a href="http://openapi.qzone.qq.com/oauth/show?which=ConfirmPage&amp;response_type=code&amp;client_id=100277792&amp;redirect_uri=http%3A%2F%2Fwww.diaoyanbao.com%2Fsignup%2Fqq&amp;scope=get_user_info,get_info,add_t,add_pic_t,add_share"><img src="images/l-qq.png" alt="QQ账号登录" width="120" height="24"></a></li>-->
+                        <!--<li><a href="https://mapi.alipay.com/gateway.do?_input_charset=utf-8&amp;target_service=user.auth.quick.login&amp;sign_type=MD5&amp;service=alipay.auth.authorize&amp;partner=2088701559561780&amp;return_url=http%3A%2F%2Fwww.diaoyanbao.com%2Fsignup%2Falipay&amp;sign=439baa24658e83a1e274b8d2e5a10083"><img src="images/l-alipay.png" alt="支付宝快捷登录" width="120" height="27"></a></li>-->
+                        <!--<li><a href="http://app.hichina.com/toapp/100050"><img src="images/l-wanw.png" alt="万网登录" width="120" height="27"></a></li>-->
+                        <!--<li><a href="null?response_type=code&amp;client_id=null&amp;redirect_uri=null"><img src="images/l-jd.gif" alt="京东登录" width="120" height="24"></a></li>-->
+                        <!--<li><a href="login/taobao"><img width="120" height="24" alt="淘宝卖家登录" src="images/l-taobao.gif"></a></li>-->
+                    <!--</ul>-->
 
-                    <%--<br/>--%>
-                    <%--<div class="divTitle">使用合作账户授权登录即表示您同意我们的使用条款和隐私权政策</div>--%>
-                <%--</div>--%>
-            <%--</div>--%>
-        <%--</div>--%>
+                    <!--<br/>-->
+                    <!--<div class="divTitle">使用合作账户授权登录即表示您同意我们的使用条款和隐私权政策</div>-->
+                <!--</div>-->
+            <!--</div>-->
+        <!--</div>-->
 </div>
 
+    <span id="includeFooter" > </span>
 
-
-<%@include file="dibu.jsp"%>
 
 
 <script>
@@ -147,5 +140,6 @@
     };
 
 </script>
+    </div>
 </body>
 </html>

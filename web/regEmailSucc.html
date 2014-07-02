@@ -1,15 +1,9 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: duel
-  Date: 13-12-10
-  Time: 下午4:20
-  To change this template use File | Settings | File Templates.
---%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
     <title>趣宝盆验证成功</title>
-    <%@include file="package.jsp"%>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <script src="js/jquery-1.9.1.js"></script>
+    <script src="js/import/import.js"></script>
     <script src="js/ajaxRequest.js"></script>
 </head>
 <body>
@@ -22,12 +16,12 @@
         </div>
         <div class="row show-grid">
             <div class="col-md-2 col-md-offset-1 logo">
-                <a href="shouye.jsp">
+                <a href="shouye.html">
                     <img src="images/logot.png" width="180px" />
                 </a>
             </div>
             <div class="col-xs-offset-6 col-xs-2">
-                <div class="backToHome" onclick="self.location='shouye.jsp'">
+                <div class="backToHome" onclick="self.location='shouye.html'">
                     <span class="glyphicon glyphicon-circle-arrow-left"></span> 返回首页
                 </div>
             </div>
@@ -63,7 +57,7 @@
         var oTimer=document.getElementById("redirectTime");
         var oBtn=document.getElementById("redirectBtn");
         oBtn.onclick=function(){
-            location.href="shouye.jsp";
+            location.href="shouye.html";
         }
 
         var timer=null;
@@ -71,7 +65,7 @@
             var iSecond=parseFloat(oTimer.innerHTML);
             if( isNaN(iSecond) || iSecond<=1){
                 clearInterval(timer);
-                location.href="shouye.jsp";
+                location.href="shouye.html";
             }
             iSecond--;
             oTimer.innerHTML=iSecond;
@@ -82,7 +76,8 @@
 </script>
 
 
-<%@include file="dibu.jsp"%>
+<span id="includeFooter" > </span>
+
 
 </body>
 </html>

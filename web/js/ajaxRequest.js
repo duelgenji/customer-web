@@ -53,7 +53,7 @@ function regRequest(event){
                 clearTimeout(timer);
                 $(ev).empty().append("注册");
                 if (result == 1) {
-                    location.href="shouye.jsp";
+                    location.href="shouye.html";
                 }
                 if (result == 0) {
                     var msg = data.message;
@@ -106,7 +106,7 @@ function loginByMobile(){
                    }else{
                        setCookie("csunm",sUserName,-1);
                    }
-                   location.href="shouye.jsp";
+                   location.href="shouye.html";
                 }
                 if (result == 0) {
                     var msg = data.message;
@@ -159,7 +159,7 @@ function loginByEmail(event){
                     }else{
                         setCookie("csune",sUserName,-1);
                     }
-                    location.href="shouye.jsp";
+                    location.href="shouye.html";
                 }
                 if (result == 0) {
                     var msg = data.message;
@@ -272,7 +272,7 @@ function regByMobile(event){
                 clearTimeout(timer);
                 $(ev).empty().append("注册");
                 if (result == 1) {
-                    location.href="shouye.jsp";
+                    location.href="shouye.html";
                 }
                 if (result == 0) {
                     var msg = data.message;
@@ -327,7 +327,7 @@ function regByEmail(event){
                 $(ev).empty().append("注册");
                 if (result == 1) {
                     //邮箱注册后跳转至等待激活的页面
-                    location.href="emailRegisterActive.jsp";
+                    location.href="emailRegisterActive.html";
                 }
                 if (result == 0) {
                     var msg = data.message;
@@ -355,7 +355,7 @@ function userLogout(){
                 success: function (data) {
                     var result = data.success;
                     if (result == 1) {
-                        location.href="shouye.jsp";
+                        location.href="shouye.html";
                     }
                     if (result == 0) {
                         var msg = data.message;

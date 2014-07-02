@@ -19,10 +19,10 @@ function importPackage(){
     $("head").append('<link href="css/alertify/alertify.bootstrap.css" rel="stylesheet">');
     $("head").append('<script src="js/qbpjs/utils.js"><\/script>');
     $("head").append('<script src="js/jquery.redirect.min.js"/><\/script>');
-    $("head").append('<script src="js/bootstrap.js"/><\/script>');
-    $("head").append('<script src="js/ajaxRequest.js"/><\/script>');
-    $("head").append('<script src="js/alertify/alertify.js"/><\/script>');
-    $("head").append('<script src="js/spin/spin.js"/><\/script>');
+    $("head").append('<script src="js/bootstrap.js"><\/script>');
+    $("head").append('<script src="js/ajaxRequest.js"><\/script>');
+    $("head").append('<script src="js/alertify/alertify.js"><\/script>');
+    $("head").append('<script src="js/spin/spin.js"><\/script>');
 }
 
 
@@ -56,8 +56,7 @@ function clientSideInclude(id, url) {
     }
     var element = document.getElementById(id);
     if (!element) {
-        alert("函数clientSideInclude无法找到id " + id + "。" +
-            "你的网页中必须有一个含有这个id的div 或 span 标签。");
+        console.log("函数clientSideInclude无法找到id " + id + "。" +"你的网页中必须有一个含有这个id的div 或 span 标签。");
         return;
     }
     if (req) {
@@ -73,3 +72,20 @@ function clientSideInclude(id, url) {
             "或 Firefox 或 Safari 浏览器，也可能会有其他可兼容的浏览器存在。";
     }
 }
+
+function footerRedirect(){
+    var oFooterCol=document.getElementById("footer-col");
+    var aFooterItems=oFooterCol.getElementsByClassName("col-xs-1");
+    aFooterItems[0].onclick=function(){location.href="about.html";}
+    aFooterItems[1].onclick=function(){location.href="role.html";}
+    aFooterItems[2].onclick=function(){location.href="contact.html";}
+    aFooterItems[3].onclick=function(){location.href="privacy.html";}
+    aFooterItems[4].onclick=function(){location.href="job.html";}
+}
+
+$(document).ready(function () {
+    /**
+     * 加载完页面才能给页脚元素添加点击事件
+     */
+    footerRedirect();
+});

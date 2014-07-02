@@ -1,17 +1,11 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: duel
-  Date: 13-12-11
-  Time: 下午2:37
-  To change this template use File | Settings | File Templates.
---%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@ page import="com.qubaopen.survey.domain.Customer" %>
-<%@ page import="com.qubaopen.survey.sessiondomain.CustomerSession" %>
+<!--<%@ page import="com.qubaopen.survey.domain.Customer" %>-->
+<!--<%@ page import="com.qubaopen.survey.sessiondomain.CustomerSession" %>-->
 <html>
 <head>
     <title>趣宝盆邮箱验证</title>
-    <%@include file="package.jsp"%>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <script src="js/jquery-1.9.1.js"></script>
+    <script src="js/import/import.js"></script>
     <script src="js/ajaxRequest.js"></script>
 </head>
 <body>
@@ -24,12 +18,12 @@
         </div>
         <div class="row show-grid">
             <div class="col-md-2 col-md-offset-1 logo">
-                <a href="shouye.jsp">
+                <a href="shouye.html">
                     <img src="images/logot.png" width="180px" />
                 </a>
             </div>
             <div class="col-xs-offset-6 col-xs-2">
-                <div class="backToHome" onclick="self.location='shouye.jsp'">
+                <div class="backToHome" onclick="self.location='shouye.html'">
                     <span class="glyphicon glyphicon-circle-arrow-left"></span> 返回首页
                 </div>
             </div>
@@ -56,28 +50,28 @@
             </div>
             <h5 class="qbpFont">通常情况下，激活邮件2分钟内会发送到您的邮箱，如暂时没有收到请稍后查看；</h5>
             <h5 class="qbpFont">如果长时间没收到邮件，点击<a onclick="resendEmail()" href="javascript:void(0);">重新发送</a>；</h5>
-            <h5 class="qbpFont"> 如遇到其他问题请<a href="contact.jsp">联系我们</a>。</h5>
+            <h5 class="qbpFont"> 如遇到其他问题请<a href="contact.html">联系我们</a>。</h5>
         </div>
 
     </div>
 </div>
-<%@include file="dibu.jsp"%>
+<span id="includeFooter" > </span>
 
 <script type="text/javascript">
     var sTempMail="";
-    <%
-    Object obj=request.getSession().getAttribute("TEMPSESSIONCUSTOMEROBJ");
-    String name="";
-       if(obj!=null)
-       name=((CustomerSession)obj).getUsername();
-    %>
-    sTempMail = '<%=name%>';
+//    <%
+//    Object obj=request.getSession().getAttribute("TEMPSESSIONCUSTOMEROBJ");
+//    String name="";
+//       if(obj!=null)
+//       name=((CustomerSession)obj).getUsername();
+//    %>
+//    sTempMail = '<%=name%>';
     if(sTempMail){
         document.getElementById("myEmail").innerHTML=sTempMail;
     }
     else{
         //没有取到邮箱字段 跳转至注册
-        location.href="register.jsp";
+        location.href="register.html";
     }
     var aMailList = new Array();
     aMailList.push({mail : '0355.net', domain : 'mail.0355.net'});

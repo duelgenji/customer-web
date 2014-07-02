@@ -188,7 +188,7 @@ $(document).ready(function () {
                     var result = data.success;
                     if (result == 1) {
                         setTimeout(function () {
-                            location.href = "publicSurvey.jsp";
+                            location.href = "publicSurvey.html";
                         }, 1000);
                     } else if (result == 0) {
                         var msg = data.message;

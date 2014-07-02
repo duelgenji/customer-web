@@ -1,23 +1,15 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: duel
-  Date: 14-2-28
-  Time: 下午2:43
-  To change this template use File | Settings | File Templates.
---%>
-
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
     <title>趣宝盆</title>
 
-    <%@include file="package.jsp"%>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <script src="js/jquery-1.9.1.js"></script>
+    <script src="js/import/import.js"></script>
     <link rel="stylesheet" href="css/jquery-ui.css"/>
     <link href="css/boot.css" rel="stylesheet">
     <link href="css/editsurvey.css" rel="stylesheet">
     <script src="js/jquery-ui.js" type="text/javascript"></script>
     <script src="js/qbpjs/editLogic.js"></script>
-    <script src="js/qbpjs/utils.js"></script>
     <script type="text/javascript">
 
         window.onload=function(){
@@ -63,7 +55,7 @@
 
 </head>
 <body>
-<%@include file="toubu.jsp"%>
+<span id="includeHead" > </span>
 
 
 
@@ -71,16 +63,16 @@
 
 <div id="loadingDiv" style="position:fixed;top:45%;left:50%;z-index:999;"></div>
 <ol class="breadcrumb">
-    <li><a href="shouye.jsp">首页</a></li>
-    <li><a href="mySurveyList.jsp">我的问卷</a></li>
+    <li><a href="shouye.html">首页</a></li>
+    <li><a href="mySurveyList.html">我的问卷</a></li>
     <li  class="active">创建</li>
 </ol>
 <ul class="nav nav-tabs">
-    <li style="width: 126.275px;"><a href="editsurvey.jsp" class="tv"><div id="id16"></div>设计问卷</a></li>
+    <li style="width: 126.275px;"><a href="editsurvey.html" class="tv"><div id="id16"></div>设计问卷</a></li>
     <li class="active" style="width: 126.275px;"><a href="javascript:void(0)"  class="books"><div id="id15"></div>逻辑设置</a></li>
     <li style="width: 126.275px;"><a href="javascript:void(0)" onclick="doSpin()" class="music"><div id="id11"></div>预览问卷</a></li>
     <li style="width: 126.275px;"><a href="#video" class="video"><div id="id12"></div>发布问卷</a></li>
-    <li style="width: 126.275px;"><a href="analyzeSurvey.jsp" class="movies"><div id="id13"></div>问卷分析</a></li>
+    <li style="width: 126.275px;"><a href="analyzeSurvey.html" class="movies"><div id="id13"></div>问卷分析</a></li>
 </ul>
 <div class="jumbotron createcontent">
     <div id="createTab" style="min-height: 200px;">
@@ -118,7 +110,7 @@
 </div>
 
 </div>
-<%@include file="dibu.jsp"%>
+<span id="includeFooter" > </span>
 
 </body>
 </html>

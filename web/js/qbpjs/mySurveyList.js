@@ -9,18 +9,18 @@ $(document).ready(function () {
     $(document).on("click",".glyphicon-edit",function(){
         var _this=this;
         var qid=$(_this).closest("tr").attr("data-sid");
-        $().redirect('editsurvey.jsp',{'qid': qid},"get");
+        $().redirect('editsurvey.html',{'qid': qid},"get");
     });
     $(document).on("click",".sTitle",function(){
         var _this=this;
         var qid=$(_this).closest("tr").attr("data-sid");
-        $().redirect('editsurvey.jsp',{'qid': qid},"get");
+        $().redirect('editsurvey.html',{'qid': qid},"get");
     });
     //预览问卷
     $(document).on("click",".glyphicon-eye-open",function(){
         var _this=this;
         var qid=$(_this).closest("tr").attr("data-sid");
-        $().redirect('surveyPreview.jsp',{'qid': qid},"get","_blank");
+        $().redirect('surveyPreview.html',{'qid': qid},"get","_blank");
     });
     //复制问卷
     $(document).on("click",".more_items",function(){
@@ -29,7 +29,7 @@ $(document).ready(function () {
     $(document).on("click",".glyphicon-stats",function(){
         var _this=this;
         var sid=$(_this).closest("tr").attr("data-sid");
-        $().redirect('analyzeSurvey.jsp',{'sid': sid},"get");
+        $().redirect('analyzeSurvey.html',{'sid': sid},"get");
     });
 
 
@@ -91,7 +91,7 @@ $(document).ready(function () {
     //已发布问卷链接
     $(document).on("click",".glyphicon-link",function(){
         var oTr=$(this).closest("tr");
-        var sUrl=location.host+"/cs/doSurvey.jsp?qid="+oTr.attr("data-sid");
+        var sUrl=location.host+"/cs/doSurvey.html?qid="+oTr.attr("data-sid");
 //        $(this).zclip({
 //            path:'js/zclip/ZeroClipboard.swf',
 //            copy:sUrl
@@ -223,7 +223,7 @@ function buildMySurveyList(oJson){
         sSurveyListHTML+="</tr>";
     }
     $("#surveyList").empty().append(sSurveyListHTML);
-    var sUrl=location.host+"cs/doSurvey.jsp?qid";
+    var sUrl=location.host+"cs/doSurvey.html?qid";
 //    $(".glyphicon-link").zclip({
 //        path:'js/zclip/ZeroClipboard.swf',
 //        copy:sUrl+$(this).closest("tr").attr("data-sid")
