@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>趣宝盆</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <script src="js/jquery-1.9.1.js"></script>
+    <script src="js/import/import.js"></script>
+    <link href="bootstrap/css/bootstrap-switch.min.css" rel="stylesheet">
+    <script src="bootstrap/js/bootstrap-switch.min.js"></script>
+
+    <style>
+
+        /*各信息块里的元素  上下padding */
+        .info div{
+            padding: 15px 0;
+        }
+        /*每一行信息里的每块   左padding */
+        .info div span{
+            padding-left: 15px;
+        }
+        /*每一行信息里的第一块 左padding*/
+        .info div span:first-child{
+            padding-left: 0px;
+        }
+    </style>
+    <script>
+        $(document).ready(function(){
+            //开关控件
+            $("[name='my-checkbox']").bootstrapSwitch();
+        });
+    </script>
+</head>
+<body>
+
+<span id="includeHead"> </span>
+
+
+<div class="center" style="font-family:'microsoft yahei';display:block;min-height:450px;width: 80%;margin: 10px auto;">
+
+    <div id="loadingDiv" style="position:fixed;top:45%;left:50%;z-index:999;"></div>
+    <ul class="nav nav-tabs">
+        <li class="active"><a href="javascript:void(0)">我的账户</a></li>
+        <li ><a href="myRecord.html">交易记录</a></li>
+    </ul>
+    <div class="container">
+
+        <div>
+            <div class="page-header">
+                <h3>账号信息</h3>
+            </div>
+            <div class="info">
+                <div>
+                    <span>手机:</span><span>13917377795</span>
+                </div>
+                <div>
+                    <span>邮箱:</span><span>361714571@qq.com</span>
+                </div>
+                <div>
+                    <button type="button" class="btn btn-default btn-sm">
+                        修改密码
+                    </button>
+                </div>
+
+            </div>
+        </div>
+
+
+
+        <div>
+            <div class="page-header">
+                <h3>财产信息</h3>
+            </div>
+            <div class="info">
+                <div>
+                    <span>可用余额:</span><span>339元</span>
+                    <span>
+                        <button type="button" class="btn btn-primary btn-sm">
+                            <span class="glyphicon glyphicon-usd"></span> 充值
+                        </button>
+                    </span>
+                </div>
+                <div>
+                    <span>正在使用:</span><span>100元</span>
+                </div>
+                <div>
+                    <span>已经支出:</span><span>100元</span>
+                </div>
+            </div>
+        </div>
+
+        <div>
+            <div class="page-header">
+                <h3>个人设置</h3>
+            </div>
+            <div class="">
+                <div>
+                    <span>是否公开问卷:</span>
+                    <span>
+                        <input type="checkbox" name="my-checkbox" data-on-text="是" data-off-text="否" checked>
+                    </span>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+
+
+<span id="includeFooter"> </span>
+
+
+</body>
+</html>

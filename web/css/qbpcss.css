@@ -82,12 +82,13 @@
 }
 .wrapper{
     margin: 0 auto;
-    overflow: hidden;
+    /*用户条下拉框*/
+    /*overflow: hidden;*/
     height: 100px;
     position: relative;
 }
 .wrapper a{
-    float: left;
+    /*float: left;*/
     display: block;
 }
 
@@ -199,8 +200,17 @@ footer .container{
 
 
 .easyLog{
-    margin-top: 11px;
+    margin-top: 15px;
 }
+.easyLog .account{
+    font-family: "microsoft yahei";
+    cursor: default;
+    color: #707274 ;
+}
+.easyLog .account:hover{
+    color: #428bca ;
+}
+
 .easyLog a{
     font-family: "microsoft yahei";
     color: #707274 ;

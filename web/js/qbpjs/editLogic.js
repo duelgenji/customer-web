@@ -4,6 +4,7 @@
 
 $(document).ready(function () {
 
+    $('.dropdown-toggle').dropdown();
     //按钮增加  hover 气泡提示框
     $('#btnAddLogic').popover({
         trigger: 'hover',
@@ -24,7 +25,7 @@ $(document).ready(function () {
         addLogic();
     });
     //删除按钮 点击
-    $(document).on("click",".close",function(){
+    $(document).on("click",".removeLogic",function(){
         $(this).closest(".logic").remove();
         sortIndex();
     });
@@ -103,13 +104,19 @@ function addLogic(){
 
 
     //分割线
-    $("#"+gid).append('<div class="result col-xs-push-1 col-xs-11 row ">');
-    $("#"+gid+" .result").append('<div class="col-xs-12 line"></div>');
+
+    $("#"+gid).append('<div class="col-xs-12 line"></div>');
+    $("#"+gid).append('<div class="logicResult row"></div>');
+    $("#"+gid+" .logicResult").append('<div class="result col-xs-offset-1 col-xs-11 h45">');
 
 
     //添加结果
 
-    $("#"+gid+" .result").append('<div class="col-xs-2">跳至</div>');
+    $("#"+gid+" .result").append('<div class="col-xs-2">' +
+        '<select class="form-control">' +
+        '<option value="1">跳转至</option>' +
+        '<option value="2">问卷终止</option>' +
+        '</select></div>');
 
     //结果题目 下拉框
     appendHTML='<div class="col-xs-4"><select id=suf_question_'+gid+' class="form-control"></select></div>';
