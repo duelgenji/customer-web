@@ -57,7 +57,7 @@ $(document).ready(function () {
                 });
                 var spinner = new Spinner().spin(document.getElementById('loadingDiv'));
                 $.ajax({
-                    url: "dywj/delete.htm",
+                    url: ContextUrl+"dywj/delete.htm",
                     type: "POST",
                     dataType: "json",
                     data: {"json": JSON.stringify(oSendJson) },
@@ -136,7 +136,7 @@ function loadUserSurveyList(iPage,sOrderDir,sOrderBy,iPageSize){
     oSendJson.pageSize = iPageSize || "10";
 
     $.ajax({
-        url: "dywj/list.htm",
+        url: ContextUrl+"dywj/list.htm",
         type: "POST",
         dataType: "json",
         data: {"json": JSON.stringify(oSendJson) },
@@ -257,7 +257,7 @@ function reviewSurvey(object){
     var spinner = new Spinner().spin(document.getElementById('loadingDiv'));
 
     $.ajax({
-        url: "shfb/tjsh.htm",
+        url: ContextUrl+"shfb/tjsh.htm",
         type: "POST",
         dataType: "json",
         data: {"json": JSON.stringify(oSendJson) },
@@ -297,7 +297,7 @@ function publishSurvey(object){
         if (e) {
             var spinner = new Spinner().spin(document.getElementById('loadingDiv'));
             $.ajax({
-                url: "shfb/nmfb.htm",
+                url: ContextUrl+"shfb/nmfb.htm",
                 type: "POST",
                 dataType: "json",
                 data: {"json": JSON.stringify(oSendJson) },

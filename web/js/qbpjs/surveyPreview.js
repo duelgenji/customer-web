@@ -20,7 +20,7 @@ $(document).ready(function(){
 
         oSendJson.wjId = iQId;
         $.ajax({
-            url: "dywj/wj.htm",
+            url: ContextUrl+"dywj/wj.htm",
             type: "POST",
             dataType: "json",
             async: false,
@@ -42,7 +42,7 @@ $(document).ready(function(){
 
         oSendJson.childModelId = iMId;
         $.ajax({
-            url: "wjmb/getwjmb.htm",
+            url: ContextUrl+"wjmb/getwjmb.htm",
             type: "POST",
             dataType: "json",
             async: false,

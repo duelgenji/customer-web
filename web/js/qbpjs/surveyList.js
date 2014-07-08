@@ -49,7 +49,7 @@ function getMbWj(iPage,iEachPageItems,iType) {
 
     var obj=null;
     $.ajax({
-        url: "publicwj/getwjmblist.htm",
+        url: ContextUrl+"publicwj/getwjmblist.htm",
         type: "POST",
         dataType: "json",
         data: {"json": JSON.stringify(oSendJson) },
@@ -114,7 +114,7 @@ function getGkWj(iPage,iEachPageItems,iType) {
 
     var obj=null;
     $.ajax({
-        url: "publicwj/getwjlist.htm",
+        url: ContextUrl+"publicwj/getwjlist.htm",
         type: "POST",
         dataType: "json",
         data: {"json": JSON.stringify(oSendJson) },
@@ -187,7 +187,7 @@ function loadSurveyIndexList(){
 function getIndexList(){
     var obj=null;
     $.ajax({
-        url: "publicwj/getindexlist.htm",
+        url: ContextUrl+"publicwj/getindexlist.htm",
         type: "POST",
         dataType: "json",
         async: false,

@@ -6,7 +6,7 @@
  * To change this template use File | Settings | File Templates.
  */
 
-ContextUrl="http://localhost/cs";
+ContextUrl="http://localhost:8080/cs";
 //
 //if(!(location.hostname).match("www.qubaopen.com.cn")){
 //    location.hostname="www.qubaopen.com.cn";

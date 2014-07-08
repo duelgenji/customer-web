@@ -2,7 +2,9 @@
  * Created by duel on 13-12-13.
  */
 
-
+//字母表
+var alphabet=['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T'
+    ,'U','V','W','X','Y','Z'];
 
 //绘制分页列表
 function buildPage(iTotalItems,iCurrentPage,iItemEachPage){
@@ -166,4 +168,17 @@ function compareDate(date1,date2){
     else if(dateSub > eachMonth){
         return  Math.floor(dateSub/eachMonth)+"月前";
     }
+}
+
+
+/**
+ * 全球唯一识别码 guid 生成随机码
+ * @returns {*}
+ */
+function guid() {
+    function _p8(s) {
+        var p = (Math.random().toString(16)+"000000000").substr(2,8);
+        return s ? "-" + p.substr(0,4) + "-" + p.substr(4,4) : p ;
+    }
+    return _p8() + _p8(true) + _p8(true) + _p8();
 }

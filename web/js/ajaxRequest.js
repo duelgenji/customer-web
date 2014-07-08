@@ -38,12 +38,13 @@ function setCookie(c_name,value,expiredays)
 }
 
 
+var prefix="http://localhost:8080/cs/"
 function regRequest(event){
     var ev = window.event || event;
     var url="http://localhost/cs/user/regist.htm";
     var timer=setTimeout(function(){
         $.ajax({
-            url:"user/logon.htm" ,
+            url:prefix+"user/logon.htm" ,
             type: "POST",
             dataType: "json",
             async:false,
@@ -91,7 +92,7 @@ function loginByMobile(){
     var url="http://localhost/cs/user/logon.htm";
     var timer=setTimeout(function(){
         $.ajax({
-            url:"user/logon.htm" ,
+            url:prefix+"user/logon.htm" ,
             type: "POST",
             dataType: "json",
             async:false,

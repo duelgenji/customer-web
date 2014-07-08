@@ -19,7 +19,7 @@ $(document).ready(function () {
 
         oSendJson.wjId = iQId;
         $.ajax({
-            url: "publicwj/getwj.htm",
+            url: ContextUrl+"publicwj/getwj.htm",
             type: "POST",
             dataType: "json",
             async: false,
@@ -41,7 +41,7 @@ $(document).ready(function () {
 
         oSendJson.childModelId = iMId;
         $.ajax({
-            url: "wjmb/getwjmb.htm",
+            url: ContextUrl+"wjmb/getwjmb.htm",
             type: "POST",
             dataType: "json",
             async: false,

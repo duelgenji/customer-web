@@ -555,7 +555,7 @@ function saveSurvey(){
 
         var spinner = new Spinner().spin(document.getElementById('loadingDiv'));
         $.ajax({
-            url: "dywj/modify.htm",
+            url: ContextUrl+"dywj/modify.htm",
             type: "POST",
             dataType: "json",
             async: true,
@@ -577,7 +577,7 @@ function saveSurvey(){
 
         var spinner = new Spinner().spin(document.getElementById('loadingDiv'));
         $.ajax({
-            url: "dywj/insert.htm",
+            url: ContextUrl+"dywj/insert.htm",
             type: "POST",
             dataType: "json",
             async: false,
@@ -859,7 +859,7 @@ function loadSurvey(){
         oSendJson.wjId = iQId;
 
         $.ajax({
-            url: "dywj/wj.htm",
+            url: ContextUrl+"dywj/wj.htm",
             type: "POST",
             dataType: "json",
             async:false,
@@ -889,7 +889,7 @@ function loadSurvey(){
 
         oSendJson.childModelId = iMId;
         $.ajax({
-            url: "wjmb/getwjmb.htm",
+            url: ContextUrl+"wjmb/getwjmb.htm",
             type: "POST",
             dataType: "json",
             data: {"json": JSON.stringify(oSendJson) },
