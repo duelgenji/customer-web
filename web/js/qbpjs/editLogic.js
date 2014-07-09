@@ -4,7 +4,6 @@
 
 $(document).ready(function () {
 
-    $('.dropdown-toggle').dropdown();
     //按钮增加  hover 气泡提示框
     $('#btnAddLogic').popover({
         trigger: 'hover',

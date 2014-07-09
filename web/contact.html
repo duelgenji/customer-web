@@ -9,7 +9,7 @@
     <script type="text/javascript">
         $(document).ready(function () {
             //头部导航变色
-            console.log(window.global);
+            $("#myNav li:eq(3)").toggleClass("active");
 
             clientSideInclude('includeFooterLeftMenu',"footerLeftMenu.html");
             $("#footerLeftMenu .nav-list:eq(2) a").addClass("active");

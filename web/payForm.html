@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>趣宝盆</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <script src="js/jquery-1.9.1.js"></script>
+    <script src="js/import/import.js"></script>
+
+    <style>
+        .payForm{
+            min-height: 50px;
+            line-height: 50px;
+        }
+
+
+        .userInput{
+            width: 300px;
+            display: inline-block;
+        }
+        .payType{
+            margin-bottom: -11px;
+        }
+
+
+
+    </style>
+
+    <script>
+
+        $(document).ready(function () {
+
+        });
+
+    </script>
+</head>
+<body>
+
+<span id="includeHead"> </span>
+
+
+<div class="center" style="font-family:'microsoft yahei';display:block;min-height:450px;width: 80%;margin: 10px auto;">
+
+    <div class="btn-group btn-group-justified" data-toggle="buttons">
+        <label class="btn btn-default active">
+            <input type="radio" name="options" id="step1" checked>填写充值信息
+        </label>
+        <label class="btn btn-default">
+            <input type="radio" name="options" id="step2">提交支付
+        </label>
+    </div>
+    <div class="payForm">
+        <div class="control-group">
+            <span class="">充值账号:</span><span class="">361714571@qq.com</span>
+        </div>
+        <div class="control-group">
+            <span class="">充值金额:</span>
+            <span class="userInput"><input type="text" class="form-control" placeholder="请输入..."></span>
+        </div>
+        <div class="control-group">
+            <span class="">充值方式:</span>
+            <div class="userInput payType">
+                 <div class="btn-group btn-group-justified"  data-toggle="buttons">
+                     <label class="btn btn-default active">
+                         <input type="radio" name="options" id="payType1" checked>支付宝
+                     </label>
+                     <label class="btn btn-default">
+                         <input type="radio" name="options" id="payType2">银行卡转账
+                     </label>
+                 </div>
+            </div>
+        </div>
+
+        <div class="control-group">
+            <a style="width: 100px" href="#" type="button" class="btn btn-primary">
+                 提交
+            </a>
+        </div>
+    </div>
+
+
+
+</div>
+
+<span id="includeFooter"> </span>
+
+
+</body>
+</html>

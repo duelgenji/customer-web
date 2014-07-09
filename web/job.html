@@ -8,6 +8,8 @@
     <script type="text/javascript">
         $(document).ready(function () {
             //头部导航变色
+            $("#myNav li:eq(3)").toggleClass("active");
+
             clientSideInclude('includeFooterLeftMenu',"footerLeftMenu.html");
             $("#footerLeftMenu .nav-list:eq(4) a").addClass("active");
         });

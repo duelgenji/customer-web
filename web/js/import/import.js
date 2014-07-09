@@ -9,6 +9,8 @@ var global="";
 $(document).ready(function () {
     clientSideInclude('includeHead',"head.html");
     clientSideInclude('includeFooter',"footer.html");
+    $('.dropdown-toggle').dropdown();
+
 });
 
 
@@ -31,6 +33,10 @@ function importPackage(){
     $("head").append('<script src="js/ajaxRequest.js"><\/script>');
     $("head").append('<script src="js/alertify/alertify.js"><\/script>');
     $("head").append('<script src="js/spin/spin.js"><\/script>');
+
+    //bootstrap 3.2
+    $("head").append('<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">');
+    $("head").append('<script src="bootstrap/js/bootstrap.min.js"><\/script>');
 }
 
 
