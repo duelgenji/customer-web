@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>趣宝盆</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <script src="js/jquery-1.9.1.js"></script>
+    <script src="js/import/import.js"></script>
+    <script src="bootstrap/js/Chart.js"></script>
+    <style>
+        .payForm{
+            min-height: 50px;
+            line-height: 50px;
+        }
+
+
+        .userInput{
+            width: 300px;
+            display: inline-block;
+        }
+        .payType{
+            margin-bottom: -11px;
+        }
+
+
+
+    </style>
+
+    <script>
+
+        $(document).ready(function () {
+            var ctx = document.getElementById("myChart").getContext("2d");
+            var data = [
+                {
+                    value: 30,
+                    color:"#F38630"
+                },
+                {
+                    value : 50,
+                    color : "#E0E4CC"
+                },
+                {
+                    value : 100,
+                    color : "#69D2E7"
+                }
+            ]
+            var myNewChart = new Chart(ctx).Pie(data);
+
+
+
+            $("#download").on("click",function(){
+                var imgURI =document.getElementById("myChart").toDataURL('image/png');
+                // $("#myimg").attr("src",imgURI);
+                /**
+                 * 在本地进行文件保存
+                 * @param  {String} data     要保存到本地的图片数据
+                 * @param  {String} filename 文件名
+                 */
+                var saveFile = function(data, filename){
+                    var save_link = document.createElementNS('http://www.w3.org/1999/xhtml', 'a');
+                    save_link.href = data;
+                    save_link.download=filename;
+
+                    var event = document.createEvent('MouseEvents');
+                    event.initMouseEvent('click', true, false, window, 0, 0, 0, 0, 0, false, false, false, false, 0, null);
+                    save_link.dispatchEvent(event);
+                };
+
+// 下载后的问题名
+                var filename = 'baidufe_' + (new Date()).getTime() + '.png' ;
+// download
+                saveFile(imgURI,filename);
+
+            });
+
+
+
+        });
+
+    </script>
+</head>
+<body>
+
+<span id="includeHead"> </span>
+
+
+<div class="center" style="font-family:'microsoft yahei';display:block;min-height:450px;width: 80%;margin: 10px auto;">
+
+    <!--按钮组模式-->
+    <!--<div class="btn-group btn-group-justified" data-toggle="buttons">-->
+        <!--<label class="btn btn-default active">-->
+            <!--<input type="radio" name="options" id="step1" checked>填写充值信息-->
+        <!--</label>-->
+        <!--<label class="btn btn-default">-->
+            <!--<input type="radio" name="options" id="step2">提交支付-->
+        <!--</label>-->
+    <!--</div>-->
+    <div class="page-header">
+        <h4>我的图表</h4>
+    </div>
+
+    <canvas id="myChart" width="400" height="400"></canvas>
+
+
+    <button id="download" type="button" class="btn btn-default">下载</button>
+    <img id="myimg" src=""/>
+
+</div>
+
+<span id="includeFooter"> </span>
+
+
+</body>
+</html>

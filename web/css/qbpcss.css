@@ -74,12 +74,13 @@
 }
 
 .header{
-    background-color: #fff;
     height: 60px ;
     width: 100%;
     min-width: 990px;
     position: relative;
     margin-bottom: 20px;
+    background-color: #2d3035;
+    color: #fff;
 }
 .wrapper{
     margin: 0 auto;
@@ -95,8 +96,9 @@
 
 
 /*头部 导航栏样式*/
+/*阻止bootstrap row的 左右margin */
 .show-grid{
-    margin: 0 auto;
+    margin: 0 auto !important;
 }
 
 .header-hdr{
@@ -116,6 +118,13 @@
     color: #fff;
 }
 
+/*导航栏 菜单 active hover 颜色*/
+#myNav li.active a{
+    background-color: #2d3035;
+}
+#myNav li:hover a{
+    background-color: #2d3035;
+}
 
 
 .entry{
@@ -150,8 +159,7 @@
     font-size: 30px;
     color: #fff;
 }
-
-.logo a{
+.logo a:hover{
     text-decoration: none;
 }
 
